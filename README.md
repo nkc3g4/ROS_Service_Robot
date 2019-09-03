@@ -10,8 +10,8 @@ scripts: scripts for convenience
 
 
 Related repository:
-Robot Arm: https://github.com/nkc3g4/Arm_Pi
-Sensors:
+Robot Arm: https://github.com/nkc3g4/Arm_Pi  
+Sensors:  
 https://github.com/nkc3g4/Arduino_PMS5003_Lora  
 https://github.com/nkc3g4/Arduino_Environment_Sensor
 
