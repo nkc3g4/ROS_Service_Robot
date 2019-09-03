@@ -1,0 +1,11 @@
+<launch>
+  <!--startup robot urdf description -->
+  <include file="$(find carebot_description)/launch/carebot_description.launch"/>
+
+  <!--startup mobilebase arduino launch -->
+  <include file="$(find ros_arduino_python)/launch/arduino.launch" />
+
+  <node pkg="carebot_calibration" type="calibrate_mobilebase_linear.py" name="calibrate_mobilebase_linear" output="screen">
+    <rosparam file="$(find carebot_calibration)/config/linear_calibrate_params.yaml" command="load" />
+  </node>
+</launch>

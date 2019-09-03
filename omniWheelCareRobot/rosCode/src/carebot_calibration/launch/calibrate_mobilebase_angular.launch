@@ -1,0 +1,17 @@
+<!--
+  Copyright(C): 2016-2018 ROS小课堂
+  Author: www.corvin.cn
+  Description:
+    进行小车底盘角速度校准的launch启动文件.
+  History:
+    20180425: init this file.
+-->
+<launch>
+  <!--startup mobilebase arduino launch -->
+  <include file="$(find ros_arduino_python)/launch/arduino.launch" />
+
+  <node pkg="carebot_calibration" type="calibrate_mobilebase_angular.py" name="calibrate_mobilebase_angular" output="screen" >
+    <rosparam file="$(find carebot_calibration)/config/angular_calibrate_params.yaml" command="load" />
+  </node>
+</launch>
+

@@ -1,0 +1,792 @@
+<robot
+  name="carebot_description1">
+  <link name="base_footprint"/>
+    <joint name="base_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <parent link="base_footprint"/>
+      <child link="base_link" />
+    </joint>
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.024903284833047 -0.00014602222240669 0.0111634362268896"
+        rpy="0 0 0" />
+      <mass
+        value="0.595914690979937" />
+      <inertia
+        ixx="0.00522656520347693"
+        ixy="4.02523507836851E-06"
+        ixz="-0.00048118297823134"
+        iyy="0.00728929772561802"
+        iyz="2.59729727000594E-07"
+        izz="0.012200723823674" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="laser">
+    <inertial>
+      <origin
+        xyz="-4.00300533663356E-05 -2.75750536564674E-12 0.0273939580144463"
+        rpy="0 0 0" />
+      <mass
+        value="0.277021525910617" />
+      <inertia
+        ixx="0.000181393488701386"
+        ixy="-2.48933596681912E-14"
+        ixz="-2.21710066207303E-07"
+        iyy="0.000181923161760163"
+        iyz="-1.49043520498021E-14"
+        izz="0.00022304651986896" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/laser_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/laser_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="laser_joint"
+    type="fixed">
+    <origin
+      xyz="0.111 0 0.09015"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="laser" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="base_hat_Link">
+    <inertial>
+      <origin
+        xyz="-0.00610720296437034 -9.08614623431942E-06 -0.0235153078797355"
+        rpy="0 0 0" />
+      <mass
+        value="0.742499945276113" />
+      <inertia
+        ixx="0.0116848070455358"
+        ixy="-1.28337799467446E-06"
+        ixz="-1.05145739362938E-05"
+        iyy="0.0119664975616478"
+        iyz="-1.38581232662936E-07"
+        izz="0.022452196921704" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/base_hat_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/base_hat_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_hat_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.1027"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="base_hat_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="first_table_Link">
+    <inertial>
+      <origin
+        xyz="0.0791331383427724 -1.13022359592568E-05 -0.00199999845225846"
+        rpy="0 0 0" />
+      <mass
+        value="0.223559101210713" />
+      <inertia
+        ixx="0.00248385367385229"
+        ixy="-2.63316655010906E-07"
+        ixz="-3.1361007890838E-11"
+        iyy="0.000734998029393872"
+        iyz="5.68455542403095E-11"
+        izz="0.00321825554377076" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/first_table_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/first_table_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="first_table_joint"
+    type="fixed">
+    <origin
+      xyz="-0.120039065504002 0 0.0779"
+      rpy="0 0 9.271537700107E-14" />
+    <parent
+      link="base_hat_Link" />
+    <child
+      link="first_table_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="stick_1_Link">
+    <inertial>
+      <origin
+        xyz="0 0 0.151"
+        rpy="0 0 0" />
+      <mass
+        value="0.0341553953298282" />
+      <inertia
+        ixx="0.000259899788196439"
+        ixy="2.34797592342236E-39"
+        ixz="-6.02624444774681E-38"
+        iyy="0.000259899788196439"
+        iyz="-5.97998161350029E-38"
+        izz="6.14797115936908E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/stick_1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/stick_1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="stick_1_joint"
+    type="fixed">
+    <origin
+      xyz="-0.1310607530887 -0.09522121087137 0.0039"
+      rpy="0 0 -1.5707963267949" />
+    <parent
+      link="base_hat_Link" />
+    <child
+      link="stick_1_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="stick_2_Link">
+    <inertial>
+      <origin
+        xyz="0 0 0.151"
+        rpy="0 0 0" />
+      <mass
+        value="0.0341553953298282" />
+      <inertia
+        ixx="0.000259899788196439"
+        ixy="2.34797592342236E-39"
+        ixz="-6.02624444774681E-38"
+        iyy="0.000259899788196439"
+        iyz="-5.97998161350029E-38"
+        izz="6.14797115936908E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/stick_2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/stick_2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="stick_2_joint"
+    type="fixed">
+    <origin
+      xyz="0.04465325164232 -0.155724394742 0.0039"
+      rpy="0 0 -1.5707963267949" />
+    <parent
+      link="base_hat_Link" />
+    <child
+      link="stick_2_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="stick_3_Link">
+    <inertial>
+      <origin
+        xyz="0 6.93889390390723E-18 0.151"
+        rpy="0 0 0" />
+      <mass
+        value="0.0341553953298282" />
+      <inertia
+        ixx="0.000259899788196439"
+        ixy="2.34797592342236E-39"
+        ixz="-6.02624444774681E-38"
+        iyy="0.000259899788196439"
+        iyz="-5.97998161350029E-38"
+        izz="6.14797115936908E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/stick_3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/stick_3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="stick_3_joint"
+    type="fixed">
+    <origin
+      xyz="0.04465325164229 0.155724394742 0.0039"
+      rpy="0 0 -1.5707963267949" />
+    <parent
+      link="base_hat_Link" />
+    <child
+      link="stick_3_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="stick_4_Link">
+    <inertial>
+      <origin
+        xyz="-1.38777878078145E-17 0 0.151"
+        rpy="0 0 0" />
+      <mass
+        value="0.0341553953298282" />
+      <inertia
+        ixx="0.000259899788196439"
+        ixy="2.34797592342236E-39"
+        ixz="-6.02624444774681E-38"
+        iyy="0.000259899788196439"
+        iyz="-5.97998161350029E-38"
+        izz="6.14797115936908E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/stick_4_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/stick_4_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="stick_4_joint"
+    type="fixed">
+    <origin
+      xyz="-0.1310607530887 0.09522121087133 0.0039"
+      rpy="0 0 -1.5707963267949" />
+    <parent
+      link="base_hat_Link" />
+    <child
+      link="stick_4_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="second_table_Link">
+    <inertial>
+      <origin
+        xyz="0.0883317751189735 -9.40497788174045E-06 -0.0019999987118598"
+        rpy="0 0 0" />
+      <mass
+        value="0.26863527838377" />
+      <inertia
+        ixx="0.00252319906285813"
+        ixy="-2.86411608156052E-07"
+        ixz="-2.81746369140382E-11"
+        iyy="0.00089492693755032"
+        iyz="5.72324061839426E-11"
+        izz="0.00341740963801619" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/second_table_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/second_table_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="second_table_joint"
+    type="fixed">
+    <origin
+      xyz="-0.12003906550401 0 0.1519"
+      rpy="0 0 8.815278692591E-14" />
+    <parent
+      link="base_hat_Link" />
+    <child
+      link="second_table_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="kienct_Link">
+    <inertial>
+      <origin
+        xyz="0.000479654100297707 3.03011478501445E-18 0.0274371520370291"
+        rpy="0 0 0" />
+      <mass
+        value="0.236045799946768" />
+      <inertia
+        ixx="0.000448140589706123"
+        ixy="5.18283873422026E-20"
+        ixz="-8.95416429479664E-06"
+        iyy="8.02087444050617E-05"
+        iyz="-1.26265414404809E-20"
+        izz="0.00045408447216537" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/kienct_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/kienct_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="kinect_joint"
+    type="fixed">
+    <origin
+      xyz="0.101031470578425 0 0"
+      rpy="0 0 -8.815278692591E-14" />
+    <parent
+      link="second_table_Link" />
+    <child
+      link="kienct_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="top_table_Link">
+    <inertial>
+      <origin
+        xyz="0.122966380072355 1.064758082224E-08 -0.00199999964031372"
+        rpy="0 0 0" />
+      <mass
+        value="0.397073995934417" />
+      <inertia
+        ixx="0.00327472174182037"
+        ixy="-2.31425591764147E-08"
+        ixz="4.24825732453721E-13"
+        iyy="0.00314002427269764"
+        iyz="-1.73336395633273E-14"
+        izz="0.00641368715525247" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/top_table_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/top_table_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="top_table_joint"
+    type="fixed">
+    <origin
+      xyz="-0.119788925762066 0.00789069439565915 0.305214363923217"
+      rpy="-0.0134894624739537 -0.0057100160564083 -0.0655518415027034" />
+    <parent
+      link="base_hat_Link" />
+    <child
+      link="top_table_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="wheel_1_Link">
+    <inertial>
+      <origin
+        xyz="0 0 0.0125215844252514"
+        rpy="0 0 0" />
+      <mass
+        value="0.068043638259775" />
+      <inertia
+        ixx="1.89549304840939E-05"
+        ixy="-3.34285907530722E-23"
+        ixz="-8.470329472543E-22"
+        iyy="1.89549304840939E-05"
+        iyz="5.22338927097231E-23"
+        izz="3.03201576714331E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/wheel_1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/wheel_1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_1_joint"
+    type="fixed">
+    <origin
+      xyz="0.0915000000000019 0.158482648892555 0.018"
+      rpy="1.5707963267949 0 -0.523598775598318" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_1_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="wheel_3_Link">
+    <inertial>
+      <origin
+        xyz="-1.64418307623689E-35 3.46944695195361E-18 0.0125215844252514"
+        rpy="0 0 0" />
+      <mass
+        value="0.068043638259775" />
+      <inertia
+        ixx="1.89549304840939E-05"
+        ixy="-1.04765710695404E-37"
+        ixz="-5.80634796152453E-38"
+        iyy="1.89549304840939E-05"
+        iyz="2.5420325014116E-23"
+        izz="3.0320157671433E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/wheel_3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/wheel_3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_3_joint"
+    type="fixed">
+    <origin
+      xyz="-0.183 0 0.018"
+      rpy="1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_3_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="wheel_2_Link">
+    <inertial>
+      <origin
+        xyz="0 0 0.0125215844252514"
+        rpy="0 0 0" />
+      <mass
+        value="0.068043638259775" />
+      <inertia
+        ixx="1.89549304840939E-05"
+        ixy="3.3428590753072E-23"
+        ixz="8.470329472543E-22"
+        iyy="1.89549304840939E-05"
+        iyz="4.77087625093686E-23"
+        izz="3.03201576714331E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/wheel_2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/wheel_2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_2_joint"
+    type="fixed">
+    <origin
+      xyz="0.0915000000000019 -0.158482648892555 0.018"
+      rpy="1.5707963267949 0 -2.61799387799147" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_2_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="base_imu_link">
+    <inertial>
+      <origin
+        xyz="-0.00044101726276663 0.000312652855270691 0.000890474250173828"
+        rpy="0 0 0" />
+      <mass
+        value="0.000676197065822134" />
+      <inertia
+        ixx="1.68999752365962E-08"
+        ixy="3.09266645125064E-10"
+        ixz="3.0674755430617E-10"
+        iyy="2.95758218370792E-08"
+        iyz="-2.28339110536919E-10"
+        izz="4.60107426403964E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/imu_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carebot_description1/meshes/imu_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="imu_joint"
+    type="fixed">
+    <origin
+      xyz="0.16595 0 0.0681"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="base_imu_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

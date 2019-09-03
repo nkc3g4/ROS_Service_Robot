@@ -1,0 +1,58 @@
+# For a direct USB cable connection, the port name is typically
+# /dev/ttyACM# where is # is a number such as 0, 1, 2, etc
+# For a wireless connection like XBee, the port is typically
+# /dev/ttyUSB# where # is a number such as 0, 1, 2, etc.
+
+port: /dev/Arduino0
+baud: 9600
+timeout: 0.5
+
+rate: 50
+sensorstate_rate: 10
+
+use_base_controller: False
+base_controller_rate: 10
+base_controller_timeout: 0.7
+
+
+# For a robot that uses base_footprint, change base_frame to base_footprint
+base_frame: base_link
+
+# === Robot drivetrain parameters
+#wheel_diameter: 0.059
+#wheel_track: 0.164     # L value
+#encoder_resolution: 16 #ASLONG JGB37-545B 12V DC motors
+#gear_reduction: 90 
+#motors_reversed: True
+#debugPID: False
+#linear_scale_correction: 0.960379 
+#angular_scale_correction: 1.00
+
+# === PID parameters
+#accel_limit: 0.05
+
+#AWheel_Kp: 12
+#AWheel_Kd: 15
+#AWheel_Ki: 0
+#AWheel_Ko: 50
+
+#BWheel_Kp: 12
+#BWheel_Kd: 15
+#BWheel_Ki: 0
+#BWheel_Ko: 50
+
+#CWheel_Kp: 12
+#CWheel_Kd: 15
+#CWheel_Ki: 0
+#CWheel_Ko: 50
+
+# === Sensor definitions.  Examples only - edit for your robot.
+#     Sensor type can be one of the follow (case sensitive!):
+#	  * 
+#	  * Analog
+#	  * Digital
+sensors: {
+  #antiDropIR_front: {pin: 22, type: Digital, rate: 5, direction: input},
+  dir_sensor: {pin: 4, type: Analog, rate: 10, direction: output}
+}
+

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+DATE=`date`
+log_file=/home/corvin/.carebot/carebot-upstart.log
+source /opt/ros/kinetic/setup.bash
+source /home/corvin/omniWheelCareRobot/rosCode/devel/setup.bash
+
+interface=wlan0
+echo "$DATE: carebot_start on interface $interface" >> $log_file
+
+sleep 3
+export ROS_IP=`ifconfig $interface | grep -o 'inet addr:[^ ]*' | cut -d: -f2`
+echo "$DATE: carebot_start setting ROS_IP=$ROS_IP" >> $log_file
+
+if [ "$ROS_IP" = "" ]; then
+    echo "$DATE: carebot_start can't run with empty ROS_IP." >> $log_file
+    exit 1
+fi
+
+roslaunch carebot_bringup carebot_bringup.launch
+

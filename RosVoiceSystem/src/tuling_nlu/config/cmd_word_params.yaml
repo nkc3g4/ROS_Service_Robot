@@ -1,0 +1,44 @@
+#
+# Author: www.corvin.cn
+#
+# Description:语音控制小车移动的参数
+#
+# History:
+#   20180117: init this file.
+#
+
+# control move key word
+move_forward: 往前走
+move_back: 后退
+turn_left: 左边转
+turn_right: 右边转 
+move_left: 左边走
+move_right: 右边走
+stop_move: 不要动
+
+# voice control navigation destination 
+back_home: 回来
+go_bedroom: 去卧室
+go_window: 去窗台
+go_door: 去门口
+go_kitchen: 去厨房
+go_away: 出去
+
+
+# voice to speak room situation
+
+room_situation: 室内情况
+light_on: 开灯
+light_off: 关灯
+
+fan_on: 开风扇
+fan_off: 关风扇
+
+cur_on: 开窗帘
+cur_off: 关窗帘
+# voice to emergency situation
+emergency: 紧急求助
+
+go_here: 语音定位
+nav_stop: 停止导航
+

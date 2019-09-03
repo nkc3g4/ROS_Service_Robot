@@ -1,0 +1,20 @@
+#Copyright(c):2016-2018 ROS小课堂
+#Author: www.corvin.cn
+#Description:
+# 代价地图通用配置文件，各参数意义如下：
+#   obstacle_range: 最大障碍物检测范围,超过该范围不认为是障碍物
+#   raytrace_range: 检测自由空间的最大范围
+#   robot_radius: 机器人本体的半径
+#   inflation_radius: 与障碍物的安全半径距离,如果机器人经常撞到
+#     障碍物就需要增大该值,若无法通过狭窄地方就减小该值
+#   observation_sources: 观察源是激光雷达
+# History:
+#  20180410: init this file.
+
+obstacle_range: 2.0
+raytrace_range: 3.0
+robot_radius: 0.20 #0.18
+inflation_radius: 0.001
+observation_sources: scan
+scan: {data_type: LaserScan, topic: scan, marking: true, clearing: true}
+

@@ -1,0 +1,17 @@
+<launch>
+  <arg name="NLU_Topic" default="/voice_system/nlu_topic" />
+  <arg name="TTS_Topic" default="/voice_system/tts_topic" />
+  <arg name="MOVE_Topic" default="/voice_system/move_topic" />
+  <arg name="NAV_Topic" default="/voice_system/voice_cmd_vel" />
+  <arg name="config_file" default="$(find tuling_nlu)/config/cmd_word_params.yaml"/>
+
+  <node pkg="tuling_nlu" type="tuling_nlu_node" name="tuling_nlu_node" respawn="true" output="screen">
+    <param name="tuling_key" type="String" value="5757fb8e5ab342cbad1032993c18e971" />
+    <rosparam file="$(arg config_file)" command="load" />
+
+    <param name="nlu_topic"  value="$(arg NLU_Topic)" />
+    <param name="tts_topic"  value="$(arg TTS_Topic)" />
+    <param name="move_topic" value="$(arg MOVE_Topic)" />
+    <param name="nav_topic"  value="$(arg NAV_Topic)" />
+  </node>
+</launch>

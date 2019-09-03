@@ -1,0 +1,29 @@
+#######################################################################
+# Author: www.corvin.cn
+#######################################################################
+# Description:
+#  该参数文件是为校准小车的线速度而设置，大家可以根据需要酌情来修改各
+#  个参数，各参数功能介绍分别是：
+#  test_angle:测试小车需要移动的距离,默认是2米。
+#  linear_speed:小车移动时速度多大。
+#  tolerance_linear:在测试移动时可以容忍的误差。
+#  linear_scale:小车在移动中线速度精度,根据小车实际走的距离去除以
+#        test_distance得到的数据就是,如果小车走的还是不准确的话就继续
+#        运行一次,根据实际走的距离乘以当前的linear_scale作为新的linear_scale.
+#  base_frame:小车的基坐标系。
+#  odom_frame:小车里程计的坐标系。
+#
+#######################################################################
+# History:
+#  20180111:初始化该参数文件。
+#
+#######################################################################
+
+test_distance: 2.0    # m
+linear_speed: 0.17    # m/s
+tolerance_linear: 0.01  # 1cm
+linear_scale: 0.865  #Smaller means cover more length #0.95
+cmd_topic: /cmd_vel
+base_frame: base_footprint
+odom_frame: odom
+

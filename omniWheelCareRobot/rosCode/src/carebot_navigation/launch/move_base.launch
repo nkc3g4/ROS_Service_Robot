@@ -1,0 +1,26 @@
+<!--
+  Copyright(c): 2016-2018 ROS小课堂
+  Author: www.corvin.cn
+  Description:
+    move base package launch file, load config file for slam,config file list below:
+    (1)costmap_common_params.yaml -global_costmap
+    (2)costmap_common_params.yaml -local_costmap
+    (3)local_costmap_params.yaml
+    (4)global_costmap_params.yaml
+    (5)base_local_planner_params.yaml
+  History:
+    20180408:init this file.
+-->
+
+<launch>
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true">
+    <rosparam file="$(find carebot_navigation)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find carebot_navigation)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find carebot_navigation)/config/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find carebot_navigation)/config/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find carebot_navigation)/config/base_local_planner_params.yaml" command="load" />
+    <!-- <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />  -->
+    <remap from="odom" to="odom_ekf" />
+  </node>
+</launch>
+

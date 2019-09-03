@@ -1,0 +1,13 @@
+[Unit]
+Description=carebot startup created by corvin 
+
+[Service]
+Restart=always
+RestartSec=30
+ExecStart=/usr/sbin/carebot_start
+ExecStop=/usr/sbin/carebot_stop
+ExecRestart=/usr/sbin/carebot_restart
+
+[Install]
+WantedBy=multi-user.target
+

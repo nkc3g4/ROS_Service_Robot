@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>carebot_auto_gmapping</name>
+  <version>0.3.2</version>
+  <description>Provides carebot_automove to gmapping</description>
+
+  <maintainer email="corvin_zhang@corvin.cn">corvin zhang</maintainer>
+
+  <license>GPLv3</license>
+
+  <author>Manos Tsardoulias, Chris Zalidis, Aris Thallas</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roslib</depend>
+  <depend>roscpp</depend>
+  <depend>tf</depend>
+  <depend>sensor_msgs</depend>
+  <depend>stdr_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>geometry_msgs</depend>
+
+  <export>
+  </export>
+
+</package>
+

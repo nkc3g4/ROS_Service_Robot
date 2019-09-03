@@ -1,0 +1,6 @@
+<!--
+  Used for visualising the robot while building a map or navigating with the ros navistack.
+ -->
+<launch>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find carebot_navigation)/rviz/view_navigation.rviz"/>
+</launch>

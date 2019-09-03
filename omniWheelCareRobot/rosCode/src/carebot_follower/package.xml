@@ -1,0 +1,34 @@
+<package>
+  <name>carebot_follower</name>
+  <version>2.3.7</version>
+  <description>
+       Follower for the carebot. Follows humans and robots around by following the centroid of a box points in front of the carebot.
+  </description>
+
+  <maintainer email="corvin_zhang@corvin.cn">corvin zhang</maintainer>
+
+  <license>BSD</license>
+
+  <author email="corvin_zhang@corvin.cn">corvin zhang</author> 
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>depth_image_proc</build_depend>
+  <build_depend>nodelet</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>visualization_msgs</build_depend>
+  <build_depend>dynamic_reconfigure</build_depend>
+  <build_depend>carebot_msgs</build_depend>
+  
+  <run_depend>depth_image_proc</run_depend>
+  <run_depend>nodelet</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>visualization_msgs</run_depend>
+  <run_depend>dynamic_reconfigure</run_depend>
+  <run_depend>topic_tools</run_depend>
+  <run_depend>carebot_msgs</run_depend>
+
+  <export>
+    <nodelet plugin="${prefix}/plugins/nodelets.xml" />
+  </export>
+</package>

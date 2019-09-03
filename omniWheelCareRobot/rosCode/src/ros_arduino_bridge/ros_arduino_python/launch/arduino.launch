@@ -1,0 +1,18 @@
+<!--
+  Author: 11
+  Description:
+    启动底盘arduino的上位机launch文件.
+  History:
+    20180502: init this file.
+-->
+<launch>
+   <node name="mobilebase_arduino" pkg="ros_arduino_python" type="arduino_node.py" output="screen">
+      <rosparam file="$(find ros_arduino_python)/config/my_arduino_params.yaml" command="load" />
+   </node>
+
+   <!--<node name="my_arduino" pkg="ros_arduino_python" type="my_arduino_node.py" output="screen">
+      <rosparam file="$(find ros_arduino_python)/config/my_arduino_params2.yaml" command="load" />
+   </node>
+   -->
+</launch>
+

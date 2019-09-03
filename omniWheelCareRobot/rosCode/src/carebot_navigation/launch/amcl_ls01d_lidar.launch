@@ -1,0 +1,72 @@
+<!--
+  Author:11
+  Description:
+   ls01d lidar to amcl, first roslaunch carebot_bringup.launch, then load map,then startup 
+   ls01d lidar to scan,then roslaunch move_base package, last roslaunch amcl package.
+  History:
+    20180408: init this file.
+    20180411: add first roslaunch carebot_bringup.launch.
+-->
+
+<launch>
+  <!-- first roslaunch carebot_bringup.launch -->
+  <include file="$(find carebot_bringup)/launch/carebot_bringup.launch" />
+
+  <!-- Run the map server with a map -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find carebot_navigation)/maps/mymap.yaml" />
+
+  <!-- startup leishen ls01d_lidar lidar node -->
+  <include file="$(find ls01d_lidar)/launch/ls01d_lidar.launch" />
+
+  <!-- startup move_base node -->
+  <include file="$(find carebot_navigation)/launch/move_base.launch" />
+
+  <!-- Run amcl -->
+  <node pkg="amcl" type="amcl" name="carebot_amcl" >
+    <param name="odom_model_type" value="omni"/> #omni wheel mobilebase
+
+    <param name="base_frame_id" value="base_footprint"/>
+    <param name="global_frame_id" value="map" />
+    <param name="odom_frame_id" value="odom" />
+
+    <param name="use_map_topic" value="true" />
+    <param name="odom_alpha5" value="0.1" />
+    <param name="transform_tolerance" value="0.5" />
+    <param name="gui_publish_rate" value="1.0" />
+    <param name="laser_max_beams" value="300" />
+    <param name="min_particles" value="500"/>
+    <param name="max_particles" value="5000"/>
+    <param name="kld_err" value="0.1"/>
+    <param name="kld_z" value="0.99"/>
+
+    <param name="odom_alpha1" value="0.3"/>
+    <param name="odom_alpha2" value="0.3"/>
+    <param name="odom_alpha3" value="0.2"/>
+    <param name="odom_alpha4" value="0.2"/>
+    <param name="odom_alpha5" value="0.2"/>
+
+    <param name="laser_z_hit" value="0.9"/>
+    <param name="laser_z_short" value="0.05"/>
+    <param name="laser_z_max" value="0.05"/>
+    <param name="laser_z_rand" value="0.05"/>
+    <param name="laser_sigma_hit" value="0.2"/>
+    <param name="laser_lambda_short" value="0.1"/>
+    <param name="laser_model_type" value="likelihood_field"/>
+    <param name="laser_model_type" value="beam"/>
+    <param name="laser_min_range" value="0.14"/>
+    <param name="laser_max_range" value="7.0"/>
+    <param name="laser_likelihood_max_dist" value="2.0"/>
+    <param name="update_min_d" value="0.2"/>
+    <param name="update_min_a" value="0.5"/>
+    <param name="resample_interval" value="2"/>
+    <param name="transform_tolerance" value="3.0"/>
+    <param name="recovery_alpha_slow" value="0.0"/>
+    <param name="recovery_alpha_fast" value="0.0"/>
+  </node>
+
+  <include file="$(find iot_modules)/launch/speak_IOT.launch" />
+
+  <!--Used for visualising the robot while building a map or navigating with the ros navistack.-->
+  <!--include file="$(find carebot_navigation)/launch/view_navigation.launch" /-->
+</launch>
+

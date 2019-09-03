@@ -1,0 +1,11 @@
+<launch>
+ <arg name="NAV_Topic" default="/voice_system/voice_cmd_vel" />
+  <arg name="CMD_VEL" default="/cmd_vel" />
+  <arg name="config_file" default="$(find voice_navigation)/config/config_params.yaml" />
+
+  <node name="voice_nav_node" pkg="voice_navigation" type="voice_nav_node"  respawn="true">
+    <rosparam file="$(arg config_file)" command="load" />
+   <param name="sub_nav_topic" value="$(arg NAV_Topic)" /> 
+   <param name="pub_nav_topic" value="$(arg CMD_VEL)" /> 
+  </node>
+</launch>

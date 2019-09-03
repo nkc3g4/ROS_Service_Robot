@@ -1,0 +1,7 @@
+# set the udev rule , make the device_port be fixed by arduino
+# Need Update "KERNELS==1-1.5" value, invoke command to get value:
+# if gy-951 modle usb device name is ttyUSB1
+# udevadm info --attribute-walk --name=/dev/ttyUSB1 | grep KERNELS
+# you can get third line value
+KERNELS=="1-2", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", MODE:="0777", SYMLINK+="IMU"
+

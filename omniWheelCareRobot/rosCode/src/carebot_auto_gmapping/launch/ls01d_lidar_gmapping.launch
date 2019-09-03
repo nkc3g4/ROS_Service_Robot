@@ -1,0 +1,10 @@
+<launch>
+  <!-- fist startup ls01d lidar -->
+  <include file="$(find ls01d_lidar)/slam_launch/gmapping_ls01d_lidar.launch" />
+  
+  <node name="carebot_automove_node" pkg="carebot_auto_gmapping" type="carebot_automove_node" output="screen">
+      <param name="cmd_topic" value="/cmd_vel" />  
+      <param name="laser_topic" value="/scan" />  
+  </node>
+
+</launch>

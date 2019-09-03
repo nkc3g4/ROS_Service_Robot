@@ -1,0 +1,14 @@
+#!/bin/bash
+
+log_file=/home/$USER/.carebot/carebot-upstart.log
+DATE=`date`
+echo "$DATE: carebot-stop" >> $log_file
+
+rosservice call /stop_motor
+
+for i in $( rosnode list ); do
+    rosnode kill $i;
+done
+
+killall roslaunch
+

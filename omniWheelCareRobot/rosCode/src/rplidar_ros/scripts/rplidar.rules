@@ -1,0 +1,7 @@
+# set the udev rule , make the device_port be fixed by rplidar
+# Need Update "KERNELS=="1-1.4" value, invoke command to get value:
+# if rplidar a2 usb device name ttyUSB0
+# udevadm info --attribute-walk --name=/dev/ttyUSB0 | grep KERNELS
+# you can get third line value
+KERNEL=="ttyUSB*", KERNELS=="1-1.4", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", MODE:="0777", SYMLINK+="rplidar"
+

@@ -1,0 +1,11 @@
+<launch>
+  <arg name="ASR_Topic" default="/voice_system/asr_topic" />
+  <arg name="NLU_Topic" default="/voice_system/nlu_topic" />
+
+  <node pkg="iflytek_asr" type="iflytek_asr_node" name="iflytek_asr_node" output="screen">
+    <param name="app_id" type="String" value="5b4efb32" />
+
+    <param name="asr_topic" value="$(arg ASR_Topic)" />
+    <param name="nlu_topic" value="$(arg NLU_Topic)" />
+  </node>
+</launch>

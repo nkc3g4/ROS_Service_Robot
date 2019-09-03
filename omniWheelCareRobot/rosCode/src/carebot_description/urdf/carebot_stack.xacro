@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!--
+  Author: corvin
+  Description: this is carebot stack urdf file
+  Date: 20171222-init file;
+-->
+
+<robot name="carebot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+ <link name="base_footprint"/>
+    <!--
+       Base link is set at the bottom of the base mould.
+       This is done to be compatible with the way base link
+       was configured for turtlebot 1. Refer to
+
+       https://github.com/turtlebot/turtlebot/issues/40
+
+       To put the base link at the more oft used wheel
+       axis, set the z-distance from the base_footprint
+       to 0.352.
+      -->
+    <joint name="base_joint" type="fixed">
+      <origin xyz="0 0 0.0102" rpy="0 0 0" />
+      <parent link="base_footprint"/>
+      <child link="base_link" />
+    </joint>
+    <link name="base_link">
+      <visual>
+        <geometry>
+          <!-- new mesh -->
+          <mesh filename="package://carebot_description/meshes/base_link.STL" />
+        </geometry>
+        <origin xyz="0.001 0 0.05199" rpy="0 0 0"/>
+      </visual>
+      <collision name="base">
+        <geometry>
+          <cylinder length="0.10938" radius="0.178"/>
+        </geometry>
+        <origin xyz="0.0 0 0.05949" rpy="0 0 0"/>
+      </collision>
+      <inertial>
+        <!-- COM experimentally determined -->
+        <origin xyz="0.01 0 0"/>
+        <mass value="2.4"/> <!-- 2.4/2.6 kg for small/big battery pack -->
+        <inertia ixx="0.019995" ixy="0.0" ixz="0.0"
+                 iyy="0.019995" iyz="0.0"
+                 izz="0.03675" />
+      </inertial>
+    </link>
+
+</robot>

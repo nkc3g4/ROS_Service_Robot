@@ -1,0 +1,8 @@
+<launch>
+  <!-- Run the map server with a blank map -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find carebot_navigation)/maps/blank_map.yaml" />
+
+  <include file="$(find carebot_bringup)/launch/carebot_bringup.launch" />
+  <node name="move_squre_node" pkg="carebot_testsuit" type="move_base_square.py" output="screen" />
+
+</launch>

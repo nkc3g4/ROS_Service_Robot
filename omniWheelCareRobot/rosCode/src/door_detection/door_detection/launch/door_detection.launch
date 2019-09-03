@@ -1,0 +1,4 @@
+<launch>
+  <!--include file=(your camera launch file) -->
+  <node pkg="door_detection" name="door_detection_node" type="door_detection_node.py" />
+</launch>

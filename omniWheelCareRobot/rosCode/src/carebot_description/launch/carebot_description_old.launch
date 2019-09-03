@@ -1,0 +1,31 @@
+<!--
+  Author: www.corvin.cn
+  Description:配置机器人各link之间关系,在rviz中显示机器人模型.
+  History:
+    20180116:init this launch file.
+ -->
+<launch>
+  <arg name="model" />
+
+  <arg name="gui" default="False" />
+  <param
+    name="robot_description"
+    textfile="$(find carebot_description)/urdf/carebot.urdf" />
+  <param name="use_gui" value="$(arg gui)" />
+
+  <node
+    name="joint_state_publisher"
+    pkg="joint_state_publisher"
+    type="joint_state_publisher">
+    <param name="rate" value="10.0" />
+  </node>
+
+  <node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="state_publisher" >
+    <param name="publish_frequency" value="20.0"/>
+  </node>
+
+</launch>
+

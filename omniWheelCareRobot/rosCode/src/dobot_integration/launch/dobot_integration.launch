@@ -1,0 +1,7 @@
+<launch>
+
+  <!-- run dobot_integration node -->
+  <node name="dobot_integration_node" pkg="dobot_integration" type="dobot_integration_node" >
+  </node> 
+
+</launch>

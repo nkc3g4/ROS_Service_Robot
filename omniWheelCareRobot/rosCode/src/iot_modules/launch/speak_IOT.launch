@@ -1,0 +1,9 @@
+<launch>
+  <!-- roslaunch simple_speaker.launch -->
+  <!-- <include file="$(find baidu_speech)/launch/simple_speaker.launch" /> -->
+
+  <!-- run IOT_net node -->
+  <node pkg="iot_modules" type="IOT_net" name="IOT_net"/>
+      <param name="speak_sim" value="0"/>
+  
+</launch>

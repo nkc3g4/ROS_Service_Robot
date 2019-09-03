@@ -1,0 +1,10 @@
+#!/bin/bash
+
+log_file=/home/$USER/.carebot/carebot-upstart.log
+DATE=`date`
+echo "$DATE: carebot-stop" >> $log_file
+
+/usr/sbin/carebot_stop
+sleep 2
+/usr/sbin/carebot_start 
+
