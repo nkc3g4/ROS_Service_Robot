@@ -2,11 +2,11 @@ Source code for the ROS robot.
 
 Folder content	
 
-2019ChinaRobotCompetition: Some documents about the competition.
-ControlXiaomiDevices: code for controling xiaomi smart home devices using miio protocol.
-omniWheelCareRobot: main function of the robot including navigation.
-ros_voice_system: voice function.
-scripts: scripts for convenience
+2019ChinaRobotCompetition: Some documents about the competition.  
+ControlXiaomiDevices: code for controling xiaomi smart home devices using miio protocol.  
+omniWheelCareRobot: main function of the robot including navigation.  
+ros_voice_system: voice function.  
+scripts: scripts for convenience。  
 
 
 Related repository:  
